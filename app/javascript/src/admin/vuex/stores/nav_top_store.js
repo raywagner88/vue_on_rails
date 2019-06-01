@@ -1,8 +1,6 @@
 const NavTopStore = {
   namespaced: true,
   state: {
-    locale: window.I18n.locale,
-    availableLocales: window.I18n.availableLocales
   },
   actions: {
     logout(context) {

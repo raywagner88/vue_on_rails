@@ -2,9 +2,9 @@
   <layout>
     <div class='col-xs-12'>
       <ul class='breadcrumb pull-left'>
-        <li><router-link :to="{ name: 'root_path' }">{{ $t('dashboard.title') }}</router-link>
-        <li><router-link :to="{ name: 'users_path' }">{{ $t('users.title')}}</router-link>
-        <li>{{ $t('users.creating_user')}}</li>
+        <li><router-link :to="{ name: 'root_path' }">Dashboard</router-link>
+        <li><router-link :to="{ name: 'users_path' }">Users</router-link>
+        <li>Creating a new user</li>
       </ul>
     </div>
     <div class='col-xs-12'>

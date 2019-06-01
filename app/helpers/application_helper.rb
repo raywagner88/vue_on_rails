@@ -1,10 +1,5 @@
 module ApplicationHelper
 
-  def ui_translations(section)
-    translations = {current: I18n.t('.')[:vue][section]}
-    translations.to_json.html_safe
-  end
-
   def paginate(scope, default_per_page = scope.default_per_page)
     collection = scope.page(params[:page]).per((params[:per_page] || default_per_page).to_i)
     current, total, per_page = collection.current_page, collection.total_pages, collection.limit_value
@@ -18,5 +13,5 @@ module ApplicationHelper
       count:    collection.total_count
     }
   end
-  
+
 end

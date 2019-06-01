@@ -3,11 +3,11 @@
     <div class='col-xs-12'>
       <div class="col-xs-24">
         <ul class='breadcrumb pull-left'>
-          <li><router-link :to="{ name: 'root_path' }">{{ $t('dashboard.title') }}</router-link>
-          <li>{{ $t('users.title') }}</li>
+          <li><router-link :to="{ name: 'root_path' }">Dashboard</router-link>
+          <li>Users</li>
         </ul>
         <div class='pull-right'>
-          <router-link :to="{ name: 'new_user_path' }" class='add-link'>{{ $t('users.create') }}</router-link>
+          <router-link :to="{ name: 'new_user_path' }" class='add-link'>+Add a new user</router-link>
         </div>
       </div>
       <table class='table table-striped table-thin'>

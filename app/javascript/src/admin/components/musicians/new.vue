@@ -2,8 +2,8 @@
   <layout>
     <div class='col-xs-12'>
       <ul class='breadcrumb pull-left'>
-        <li><router-link :to="{ name: 'root_path' }">{{ $t('dashboard.title') }}</router-link>
-        <li><router-link :to="{ name: 'musicians_path' }">{{ $t('musicians.title')}}</router-link>
+        <li><router-link :to="{ name: 'root_path' }">Dashboard</router-link>
+        <li><router-link :to="{ name: 'musicians_path' }">Musicians</router-link>
         <li>{{ $t('musicians.creating_musician')}}</li>
       </ul>
     </div>

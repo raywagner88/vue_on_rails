@@ -9,16 +9,6 @@
     <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' %>
     <%= javascript_include_tag 'application' %>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <script type='text/javascript'>
-      const translations = <%= ui_translations(:admin) %>;
-    </script>
-    <script type='text/javascript'>
-      I18n = {
-        prefix: '<%= I18n.locale == I18n.default_locale ? "" : "#{I18n.locale}/" %>',
-        locale: '<%= I18n.locale %>',
-        availableLocales: <%= raw(I18n.available_locales.map {|loc| loc.to_s}) %>
-      }
-    </script>
   </head>
   <body class='admin'>
     <div id='app'>

@@ -1,18 +1,18 @@
 <template>
   <div>
     <div class="form-group">
-      <label for="">{{ $t('activerecord.models.user.email') }}</label>
-      <span class='error'>{{errors.email}}</span></label>
+      <label for="">Email</label>
+      <span class='error'>{{errors.email}}</span>
       <input type="text" v-model="user.email" class="form-control">
     </div>
     <div class="form-group">
-      <label for="">{{ $t('activerecord.models.user.password') }}</label>
-      <span class='error'>{{errors.password}}</span></label>
+      <label for="">Password</label>
+      <span class='error'>{{errors.password}}</span>
       <input type="password" v-model="user.password" class="form-control">
     </div>
     <div class="form-group">
-      <label for="">{{ $t('activerecord.models.user.password_confirmation') }}</label>
-      <span class='error'>{{errors.password_confirmation}}</span></label>
+      <label for="">Confirm password</label>
+      <span class='error'>{{errors.password_confirmation}}</span>
       <input type="password" v-model="user.password_confirmation" class="form-control">
     </div>
     <router-link :to="{ name: 'users_path' }" class="btn btn-default pull-left">{{ $t('cancel')}}</router-link>

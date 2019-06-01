@@ -2,11 +2,11 @@
   <layout>
     <div class="col-xs-12">
       <ul class="breadcrumb pull-left">
-        <li><router-link :to="{ name: 'root_path' }">{{ $t('dashboard.title') }}</router-link>
-        <li>{{ $t('musicians.title') }}</li>
+        <li><router-link :to="{ name: 'root_path' }">Dashboard</router-link>
+        <li>Musicians</li>
       </ul>
       <div class="pull-right">
-        <router-link :to="{ name: 'new_musician_path' }" class="add-link">{{ $t('musicians.create') }}</router-link>
+        <router-link :to="{ name: 'new_musician_path' }" class="add-link">Creating a new musician</router-link>
       </div>
       <div class="clearfix"></div>
 

@@ -7,7 +7,7 @@
           <h4 class="modal-title">Live Chat</h4>
         </div>
         <div class="modal-body">
-          <p>{{ $t('modals.chat.description') }}</p>
+          <p>You can test ActionCable wired with Vue here, just open up this modal in another browser tab and your messages will be broadcasted in both sessions</p>
           <div class="chat">
             <p v-for="message in messages" :key="message">
               {{ message }}
@@ -15,7 +15,7 @@
           </div>
           <form @submit.prevent="talk" accept-charset="UTF-8" class="form">
             <div class="form-group">
-              <input type="text" v-model="message" :placeholder="$t('modals.chat.placeholder')" class="form-control" />
+              <input type="text" v-model="message" placeholder="Type a message..." class="form-control" />
             </div>
           </form>
         </div>

@@ -1,13 +1,13 @@
 <template>
   <div class="filters">
-    <a href='#' @click='toggleFilters' class='toggle'>+ {{ $t('filter') }}</a>
+    <a href='#' @click='toggleFilters' class='toggle'>+ Filter</a>
     <div class='col-xs-12 well hidden'>
       <div class='form-group col-md-5'>
-        <label>{{ $t('activerecord.models.musician.name') }}</label>
+        <label>Name</label>
         <input type="text" v-model="form.name_cont" class="form-control">
       </div>
       <div class='form-group col-md-5'>
-        <label>{{ $t('activerecord.models.musician.band') }}</label>
+        <label>Band</label>
         <select v-model="form.band_eq" class="form-control">
           <option v-for="band in bands" :value="band.key" :key="band.key">
             {{ band.name }}
