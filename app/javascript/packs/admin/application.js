@@ -5,6 +5,7 @@ import router from '../../src/admin/routes.js';
 import '../../src/admin/filters/strings.js';
 import helpers from '../../src/admin/helpers';
 import EventBus from '../../src/admin/event_bus';
+import '../../src/plugins/vuetify';
 // Expose EventBus to window for JQuery access (ActionCable)
 window.EventBus = EventBus;
 
@@ -29,7 +30,7 @@ $.ajaxSetup({
       return window.location.href = '/404';
     }
 
-    return true;    
+    return true;
   }
 })
 $.ajaxPrefilter(function( options ) {
