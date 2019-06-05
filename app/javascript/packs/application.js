@@ -1,11 +1,14 @@
-import Vue from 'vue/dist/vue.esm';
+import Vue from 'vue';
 import store from '../src/vuex';
 import router from '../src/routes.js';
 import '../src/filters/strings.js';
 import '../src/plugins/vuetify';
+import JQuery from 'jquery';
 
 import NavTop from '../src/components/shared/_nav_top';
 Vue.component('nav-top', NavTop);
+
+let $ = JQuery;
 
 $.ajaxSetup({
   beforeSend: function(xhr) {

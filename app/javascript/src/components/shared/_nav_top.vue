@@ -1,19 +1,15 @@
 <template>
-  <div class='row'>
-    <div class='col-xs-12'>
+  <v-toolbar app>
+    <v-toolbar-title>Front End</v-toolbar-title>
+    <v-spacer />
+    <v-toolbar-items>
+      <v-btn flat :to="{ name: 'root_path' }">
+        Home
+      </v-btn>
+      <v-btn flat :to="{ name: 'errors_path' }">Errors pages</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
 
-      <h1>Front end</h1>
-
-      <ul class="nav nav-pills">
-        <li :class="activeOn(['root_path'])">
-          <router-link :to="{ name: 'root_path' }">Home</router-link>
-        </li>
-        <li :class="activeOn(['errors_path', 'errors_path'])">
-          <router-link :to="{ name: 'errors_path' }">Errors pages</router-link>
-        </li>
-      </ul>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -21,16 +17,6 @@ export default {
 
   data: function() {
     return {
-    }
-  },
-
-  methods: {
-    activeOn: function(paths) {
-      if(paths.includes(this.$route.name)) {
-        return 'active';
-      } else {
-        return '';
-      }
     }
   }
 }

@@ -1,8 +1,8 @@
 <template>
-  <div class='container'>
+  <v-app>
     <nav-top></nav-top>
-    <div class='row'>
+    <v-layout>
       <slot/>
-    </div>
-  </div>
+    </v-layout>
+  </v-app>
 </template>

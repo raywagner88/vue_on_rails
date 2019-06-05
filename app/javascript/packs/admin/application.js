@@ -1,10 +1,13 @@
-import Vue from 'vue/dist/vue.esm';
+import Vue from 'vue';
 import store from '../../src/admin/vuex';
 import router from '../../src/admin/routes.js';
 import '../../src/admin/filters/strings.js';
 import helpers from '../../src/admin/helpers';
 import EventBus from '../../src/admin/event_bus';
 import '../../src/plugins/vuetify';
+import JQuery from 'jquery';
+
+let $ = JQuery;
 // Expose EventBus to window for JQuery access (ActionCable)
 window.EventBus = EventBus;
 
