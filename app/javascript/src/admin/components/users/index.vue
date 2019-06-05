@@ -1,5 +1,5 @@
 <template>
-  <layout>
+  <v-container>
     <div class='col-xs-12'>
       <div class="col-xs-24">
         <ul class='breadcrumb pull-left'>
@@ -30,16 +30,14 @@
       </table>
       <pagination :pagination='pagination'></pagination>
     </div>
-  </layout>
+  </v-container>
 </template>
 
 <script>
-import Layout from '../shared/layout';
 import Pagination from '../shared/_pagination.vue';
 
 export default {
   components: {
-    'layout': Layout,
     'pagination': Pagination
   },
 

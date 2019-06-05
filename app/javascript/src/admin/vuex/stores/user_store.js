@@ -1,3 +1,5 @@
+import JQuery from 'jquery';
+let $ = JQuery;
 import helpers from '../../helpers';
 
 const UserStore = {

@@ -1,3 +1,6 @@
+import JQuery from 'jquery';
+let $ = JQuery;
+
 const NavTopStore = {
   namespaced: true,
   state: {

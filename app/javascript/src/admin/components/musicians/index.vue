@@ -36,13 +36,11 @@
 </template>
 
 <script>
-import Layout from '../shared/layout';
 import Pagination from '../shared/_pagination.vue';
 import Filters from './_filters.vue';
 
 export default {
   components: {
-    'layout': Layout,
     'pagination': Pagination,
     'filters': Filters
   },

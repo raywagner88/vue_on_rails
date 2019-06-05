@@ -1,19 +1,16 @@
 <template>
-  <layout>
+  <v-container>
     <div class='col-xs-12 col-md-6 wrapper'>
       <router-link :to="{name: 'users_path'}" class='circle warning'>
         {{ metrics.users }}<br /> Users
       </router-link>
     </div>
-  </layout>
+  </v-container>
 </template>
 
 <script>
-import Layout from '../shared/layout';
-
 export default {
   components: {
-    Layout
   },
 
   data: function() {

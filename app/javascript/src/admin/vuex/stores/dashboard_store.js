@@ -1,3 +1,6 @@
+import JQuery from 'jquery';
+let $ = JQuery;
+
 const DashboardStore = {
   namespaced: true,
   state: {

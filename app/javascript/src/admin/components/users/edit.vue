@@ -1,5 +1,5 @@
 <template>
-  <layout>
+  <v-container>
     <div class='col-xs-12'>
       <ul class='breadcrumb pull-left'>
         <li><router-link :to="{ name: 'root_path' }">Dashboard</router-link>
@@ -12,16 +12,14 @@
         <form-user></form-user>
       </form>
     </div>
-  </layout>
+  </v-container>
 </template>
 
 <script>
-import Layout from '../shared/layout';
 import FormUser from './_form.vue';
 
 export default {
   components: {
-    'layout': Layout,
     'form-user': FormUser
   },
 

@@ -5,6 +5,7 @@ import '../../src/admin/filters/strings.js';
 import helpers from '../../src/admin/helpers';
 import EventBus from '../../src/admin/event_bus';
 import '../../src/plugins/vuetify';
+import App from '../../src/admin/app.vue';
 import JQuery from 'jquery';
 
 let $ = JQuery;
@@ -41,5 +42,6 @@ $.ajaxPrefilter(function( options ) {
 
 const app = new Vue({
   router,
-  store
+  store,
+  render: h => h(App)
 }).$mount('#app')

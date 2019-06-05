@@ -16,12 +16,10 @@
 </template>
 
 <script>
-import Layout from '../shared/layout';
 import FormMusician from './_form.vue';
 
 export default {
   components: {
-    'layout': Layout,
     'form-musician': FormMusician
   },
 
