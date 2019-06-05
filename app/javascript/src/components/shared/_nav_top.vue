@@ -9,12 +9,10 @@
       <v-btn flat :to="{ name: 'errors_path' }">Errors pages</v-btn>
     </v-toolbar-items>
   </v-toolbar>
-
 </template>
 
 <script>
 export default {
-
   data: function() {
     return {
     }

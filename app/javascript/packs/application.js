@@ -3,6 +3,7 @@ import store from '../src/vuex';
 import router from '../src/routes.js';
 import '../src/filters/strings.js';
 import '../src/plugins/vuetify';
+import App from '../src/app.vue'
 import JQuery from 'jquery';
 
 import NavTop from '../src/components/shared/_nav_top';
@@ -31,5 +32,6 @@ $.ajaxPrefilter(function( options ) {
 
 const app = new Vue({
   router,
-  store
+  store,
+  render: h => h(App)
 }).$mount('#app')
