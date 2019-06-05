@@ -5,6 +5,7 @@
     <v-toolbar-items>
       <v-btn flat to="/">Home</v-btn>
       <v-btn flat :to="{ name: 'errors_path' }">Errors pages</v-btn>
+      <v-btn flat href="/admin">Login</v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>
