@@ -5,7 +5,6 @@
     <v-toolbar-items>
       <v-btn flat to="/">Home</v-btn>
       <v-btn flat :to="{ name: 'users_path' }">Users</v-btn>
-      <v-btn flat @click="startChat">Chat</v-btn>
       <v-btn flat @click="logout">Logout</v-btn>
     </v-toolbar-items>
   </v-toolbar>
@@ -25,9 +24,6 @@ export default {
         }
       );
     },
-    startChat: function() {
-      $("[data-is='modalChat']").modal()
-    }
   }
 }
 </script>
