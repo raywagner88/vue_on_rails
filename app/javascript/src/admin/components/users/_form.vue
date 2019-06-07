@@ -15,8 +15,8 @@
       <span class='error'>{{errors.password_confirmation}}</span>
       <input type="password" v-model="user.password_confirmation" class="form-control">
     </div>
-    <router-link :to="{ name: 'users_path' }" class="btn btn-default pull-left">{{ $t('cancel')}}</router-link>
-    <submit-tag :value="$t('save')" klass="btn btn-warning pull-right" :progress="progress"></submit-tag>
+    <router-link :to="{ name: 'users_path' }" class="btn btn-default pull-left">cancel</router-link>
+    <submit-tag :value="save" klass="btn btn-warning pull-right" :progress="progress"></submit-tag>
   </div>
 </template>
 

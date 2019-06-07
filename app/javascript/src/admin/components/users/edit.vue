@@ -4,7 +4,7 @@
       <ul class='breadcrumb pull-left'>
         <li><router-link :to="{ name: 'root_path' }">Dashboard</router-link>
         <li><router-link :to="{ name: 'users_path' }">Users</router-link>
-        <li>{{ $t('users.editing_user')}}</li>
+        <li>Edit User</li>
       </ul>
     </div>
     <div class='col-xs-12'>

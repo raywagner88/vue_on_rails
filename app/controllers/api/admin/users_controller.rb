@@ -35,9 +35,10 @@ class Api::Admin::UsersController < Api::Admin::AdminController
 
   def destroy
     if @user.destroy
-      head 200
+      render status: 200, json: { message: 'success' }.to_json
     else
-      render json: {success: false, errors: @user.errors.messages}.to_json, status: 422
+      render json: { success: false, errors: @user.errors.messages }.to_json,
+        status: 422
     end
   end
 

@@ -9,7 +9,6 @@ const UserStore = {
     user: {},
     errors: {},
     progress: '',
-    pagination: {}
   },
   mutations: {
     one(state, data) {
@@ -18,8 +17,7 @@ const UserStore = {
       return state;
     },
     many(state, data) {
-      state.users= data.users;
-      state.pagination = data.pagination;
+      state.users = data.users;
       return state;
     },
     progress(state, step) {

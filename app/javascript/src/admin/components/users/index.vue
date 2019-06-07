@@ -1,58 +1,56 @@
 <template>
   <v-container>
-    <div class='col-xs-12'>
-      <div class="col-xs-24">
-        <ul class='breadcrumb pull-left'>
-          <li><router-link :to="{ name: 'root_path' }">Dashboard</router-link>
-          <li>Users</li>
-        </ul>
-        <div class='pull-right'>
-          <router-link :to="{ name: 'new_user_path' }" class='add-link'>+Add a new user</router-link>
-        </div>
-      </div>
-      <table class='table table-striped table-thin'>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Created at</th>
-            <th>Email</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for='user in users' :key="user.id">
-            <td><router-link :to="{ name: 'edit_user_path', params: { id: user.id }}">{{ user.id }}</router-link></td>
-            <td><router-link :to="{ name: 'edit_user_path', params: { id: user.id }}">{{ user.created_at }}</router-link></td>
-            <td><router-link :to="{ name: 'edit_user_path', params: { id: user.id }}">{{ user.email }}</router-link></td>
-            <td><a href="#" @click="destroy(user.id)">×</a></td>
-          </tr>
-        </tbody>
-      </table>
-      <pagination :pagination='pagination'></pagination>
-    </div>
+    <v-toolbar flat color="white">
+      <v-toolbar-title>Users</v-toolbar-title>
+      <v-spacer />
+      <v-btn depressed color="primary" :to="{ name: 'new_user_path' }">New User</v-btn>
+    </v-toolbar>
+    <v-data-table :headers="headers" :items="store.users" :search="search">
+      <template v-slot:items="props">
+        <td>{{ props.item.id }}</td>
+        <td>{{ props.item.created_at }}</td>
+        <td>{{ props.item.email }}</td>
+        <td class="justify-center layout px-0">
+          <v-btn icon :to="{ name: 'edit_user_path', params: { id: props.item.id }}">
+            <v-icon small>mdi-pencil</v-icon>
+          </v-btn>
+          <v-btn icon @click="destroy(props.item)">
+            <v-icon color="error" small>mdi-delete</v-icon>
+          </v-btn>
+        </td>
+      </template>
+    </v-data-table>
   </v-container>
 </template>
 
 <script>
-import Pagination from '../shared/_pagination.vue';
-
 export default {
-  components: {
-    'pagination': Pagination
+  data() {
+    return {
+      search: '',
+      headers: [
+        { text: 'ID', value: 'id' },
+        { text: 'Created At', value: 'created_at' },
+        { text: 'Email', value: 'email' },
+        { text: 'Actions', value: '', sortable: false }
+      ]
+    }
   },
 
-  data: function() {
-    return this.$store.state.UserStore;
+  computed: {
+    store() {
+      return this.$store.state.UserStore
+    }
   },
 
-  mounted: function() {
+  mounted() {
     this.$store.dispatch('UserStore/index');
   },
 
   methods: {
-    destroy: function(user_id) {
-      if(confirm(this.$t('confirmation'))) {
-        this.$store.dispatch('UserStore/destroy', user_id).then(
+    destroy(user) {
+      if (confirm('Are you sure?')) {
+        this.$store.dispatch('UserStore/destroy', user.id).then(
           response => {
             this.$store.dispatch('UserStore/index');
           }
