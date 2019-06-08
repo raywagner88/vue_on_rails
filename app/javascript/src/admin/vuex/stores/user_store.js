@@ -80,21 +80,23 @@ const UserStore = {
     },
     update(context, user) {
       context.commit('progress', 'loading')
-      $.ajax({
-        url: `users/${user.id}`,
-        type: 'put',
-        data: {
-          user: user
-        },
-        success: function(data) {
-          context.commit('progress', 'success')
-          resolve(data);
-        },
-        error: function(data) {
-          context.commit('progress', 'failed')
-          context.commit('errors', data);
-          reject(data);
-        }
+      return new Promise((resolve, reject) => {
+        $.ajax({
+          url: `users/${user.id}`,
+          type: 'put',
+          data: {
+            user: user
+          },
+          success: function(data) {
+            context.commit('progress', 'success')
+            resolve(data);
+          },
+          error: function(data) {
+            context.commit('progress', 'failed')
+            context.commit('errors', data);
+            reject(data);
+          }
+        });
       });
     },
     destroy(context, user_id) {

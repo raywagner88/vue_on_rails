@@ -2,10 +2,7 @@ class Api::Admin::UsersController < Api::Admin::AdminController
   before_action :load_user, except: [:index, :new, :create]
 
   def index
-    @users = User.search(search_params)
-                 .result
-                 .page(params[:page])
-                 .per(params[:per_page])
+    @users = User.all
   end
 
   def new
@@ -16,18 +13,19 @@ class Api::Admin::UsersController < Api::Admin::AdminController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
 
-    if @user.errors.any?
-      render json: {success: false, errors: @user.errors.messages}.to_json, status: 422
-    else
+    if @user.save
       render template: '/api/admin/users/edit'
+    else
+      puts "ERRORS #{@user.errors.messages}"
+      render json: { success: false, errors: @user.errors.messages }.to_json, status: 422
     end
   end
 
   def update
     if @user.update_attributes(user_params)
-      render template: '/api/admin/users/edit'
+      render status: 200, json: { message: 'success' }.to_json
     else
       render json: {success: false, errors: @user.errors.messages}.to_json, status: 422
     end
