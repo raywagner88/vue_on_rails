@@ -1,13 +1,13 @@
 <template>
-  <v-toolbar app>
+  <v-app-bar app>
     <v-toolbar-title>Front End</v-toolbar-title>
     <v-spacer />
     <v-toolbar-items>
-      <v-btn flat to="/">Home</v-btn>
-      <v-btn flat :to="{ name: 'users_path' }">Users</v-btn>
-      <v-btn flat @click="logout">Logout</v-btn>
+      <v-btn text to="/">Home</v-btn>
+      <v-btn text :to="{ name: 'users_path' }">Users</v-btn>
+      <v-btn text @click="logout">Logout</v-btn>
     </v-toolbar-items>
-  </v-toolbar>
+  </v-app-bar>
 </template>
 
 <script>

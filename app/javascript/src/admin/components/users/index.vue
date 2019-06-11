@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-toolbar flat color="white">
+    <v-toolbar text color="white">
       <v-toolbar-title>Users</v-toolbar-title>
       <v-spacer />
       <v-flex sm4 hidden-xs-only>
@@ -35,8 +35,8 @@
 
         <v-card-actions>
           <v-spacer />
-          <v-btn color="warning" flat @click="dialog = false">Cancel</v-btn>
-          <v-btn color="primary" flat @click="save(store.user)">Save</v-btn>
+          <v-btn color="warning" text @click="dialog = false">Cancel</v-btn>
+          <v-btn color="primary" text @click="save(store.user)">Save</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

@@ -1,14 +1,16 @@
 import Vue from 'vue';
 import store from '../../src/admin/vuex';
 import router from '../../src/admin/routes.js';
+import Vuetify from 'vuetify';
 import helpers from '../../src/admin/helpers';
 import EventBus from '../../src/admin/event_bus';
-import '../../src/plugins/vuetify';
 import App from '../../src/admin/app.vue';
 import JQuery from 'jquery';
 
+Vue.use(Vuetify)
+
 let $ = JQuery;
-// Expose EventBus to window for JQuery access (ActionCable)
+
 window.EventBus = EventBus;
 
 import NavTop from '../../src/admin/components/shared/_nav_top';
@@ -42,5 +44,6 @@ $.ajaxPrefilter(function( options ) {
 const app = new Vue({
   router,
   store,
+  vuetify: new Vuetify(),
   render: h => h(App)
 }).$mount('#app')
