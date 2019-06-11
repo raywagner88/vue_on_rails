@@ -9,6 +9,7 @@ const UserStore = {
     user: {},
     errors: {},
     progress: '',
+    currentUser: {}
   },
   mutations: {
     one(state, data) {
@@ -27,6 +28,10 @@ const UserStore = {
     errors(state, data) {
       state.errors = helpers.showErrors(data);
       return state.errors;
+    },
+    currentUser(state, data) {
+      state.currentUser = data.user;
+      return state.currentUser;
     }
   },
   actions: {
@@ -108,6 +113,22 @@ const UserStore = {
             resolve(data);
           },
           error: function(data) {
+            reject(data);
+          }
+        });
+      });
+    },
+    user(context, query) {
+      return new Promise((resolve, reject) => {
+        $.ajax({
+          url: 'users/user',
+          type: 'get',
+          data: query,
+          success(data) {
+            context.commit('currentUser', data)
+            resolve(data);
+          },
+          error(data) {
             reject(data);
           }
         });

@@ -1,5 +1,5 @@
 class Api::Admin::UsersController < Api::Admin::AdminController
-  before_action :load_user, except: [:index, :new, :create]
+  before_action :load_user, except: [:index, :new, :create, :user]
 
   def index
     @users = User.all
@@ -18,8 +18,8 @@ class Api::Admin::UsersController < Api::Admin::AdminController
     if @user.save
       render template: '/api/admin/users/edit'
     else
-      puts "ERRORS #{@user.errors.messages}"
-      render json: { success: false, errors: @user.errors.messages }.to_json, status: 422
+      render json: { success: false, errors: @user.errors.messages }.to_json,
+        status: 422
     end
   end
 
@@ -27,7 +27,8 @@ class Api::Admin::UsersController < Api::Admin::AdminController
     if @user.update_attributes(user_params)
       render status: 200, json: { message: 'success' }.to_json
     else
-      render json: {success: false, errors: @user.errors.messages}.to_json, status: 422
+      render json: { success: false, errors: @user.errors.messages }.to_json,
+        status: 422
     end
   end
 
@@ -40,8 +41,11 @@ class Api::Admin::UsersController < Api::Admin::AdminController
     end
   end
 
-  private
+  def user
+    render status: 200, json: { user: current_user }.to_json
+  end
 
+  private
     def user_params
       params.require(:user).permit(
         :email,
@@ -53,5 +57,4 @@ class Api::Admin::UsersController < Api::Admin::AdminController
     def load_user
       @user = User.find(params[:id])
     end
-
 end

@@ -9,6 +9,9 @@
 
 <script>
 export default {
+  mounted() {
+    this.$store.dispatch('UserStore/user');
+  }
 }
 </script>
 
