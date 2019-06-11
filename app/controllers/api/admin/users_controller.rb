@@ -2,21 +2,22 @@ class Api::Admin::UsersController < Api::Admin::AdminController
   before_action :load_user, except: [:index, :new, :create, :user]
 
   def index
-    @users = User.all
+    render status: 200, json: { users: User.all }.to_json
   end
 
   def new
-    @user = User.new
+    render status: 200, json: { user: User.new }.to_json
   end
 
   def edit
+    render status: 200, json: { user: @user }.to_json
   end
 
   def create
     @user = User.new(user_params)
 
     if @user.save
-      render template: '/api/admin/users/edit'
+      render status: 200, json: { user: @user }.to_json
     else
       render json: { success: false, errors: @user.errors.messages }.to_json,
         status: 422

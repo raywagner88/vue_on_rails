@@ -86,9 +86,6 @@ GEM
     i18n (1.5.2)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
-    jbuilder (2.8.0)
-      activesupport (>= 4.2.0)
-      multi_json (>= 1.2)
     json-schema (2.8.1)
       addressable (>= 2.4)
     listen (3.1.5)
@@ -129,7 +126,6 @@ GEM
       minitest-metadata (~> 0.6)
       minitest-rails (~> 3.0)
     msgpack (1.2.6)
-    multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -235,7 +231,6 @@ DEPENDENCIES
   chromedriver-helper
   devise
   foreman
-  jbuilder (~> 2.5)
   json-schema
   listen (>= 3.0.5, < 3.2)
   minitest
